@@ -159,7 +159,7 @@ if __name__ == "__main__":
     for index, x in test.iterrows():
         sample = np.array(x)
         sample = sample[1:21]
-        print(f'Guess: {nbayes.predict(sample):.2f}, True: {x.iloc[-1]}')
-        meow.append(int(np.round(nbayes.predict(sample))) == x.iloc[-1])
+        print(f'Guess: {nbayes.predict(sample)}, True: {x.iloc[-1]}')
+        meow.append(int(np.round(nbayes.predict(sample))[0]) == x.iloc[-1])
 
     print(np.mean(meow))
